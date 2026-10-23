@@ -1,0 +1,387 @@
+{
+  "checked_at": "2026-10-23",
+  "suite": "S1MB English v1",
+  "summary_url": "https://huggingface.co/datasets/hotchpotch/s1mb-result/resolve/595f9f3e9921c3bcd9a7ee3155983eafd6491ca6/viewer-summary.json",
+  "summary_generated_at": "2026-10-21T06:52:35.262Z",
+  "measurement_revision": "4259f921ae6f6e4b2943b6179eca2380ba1a5922",
+  "scoring_url": "https://github.com/hotchpotch/S1MB/blob/9ad06feacc372af4a99beea0bf25a0bcaa1df5c4/evaluator/SCORING.md",
+  "scope": {
+    "benchmarks": 137,
+    "judgments": 26269,
+    "task_benchmarks": {
+      "noul": 59,
+      "choice": 57,
+      "score": 21
+    }
+  },
+  "metrics": {
+    "task_scores": "Baseline-adjusted 0–100; per-benchmark adjustment clipped to0–1 then equally averaged within task. Noul uses2×balanced accuracy−1; Choice uses(accuracy−best constant baseline)/(1−baseline); Score uses1−normalized MAE/constant-baseline MAE.",
+    "task_average": "Equal mean of three task scores, not Borda and not raw accuracy.",
+    "choice": "target_mass_at_prediction; standard accuracy for these hard-label classification/MCQ tasks."
+  },
+  "models": [
+    {
+      "canonical": "typesafe__jev_1_13",
+      "id": "jev-1.13.0",
+      "adapter": "typesafe",
+      "settings": {},
+      "total_params": null,
+      "active_params": null,
+      "parameter_count_method": null,
+      "display_name": "Jev 1.13.0",
+      "short_name": "Jev 1.13",
+      "url": null,
+      "hf_url": null,
+      "task_scores": {
+        "noul": 64.63433927735257,
+        "choice": 67.21804084276843,
+        "score": 46.9184513564432
+      },
+      "task_average": 59.590277158854725,
+      "judgments": 26269,
+      "abstained": 0,
+      "selected": [
+        {
+          "benchmark": "banking77-choice-test-v1",
+          "source_url": "https://huggingface.co/datasets/hotchpotch/s1mb-result/resolve/4259f921ae6f6e4b2943b6179eca2380ba1a5922/typesafe__jev_1_13/banking77-choice-test-v1.json.xz",
+          "created_at": "2026-09-28T04:06:01+00:00",
+          "model_revision": "jev-1.13.0",
+          "dataset_source": {
+            "repo_id": "hotchpotch/s1mb-dataset",
+            "revision": "0fd11d828a9cc1550c82655f3c622b70ad3882d8"
+          },
+          "counts": {
+            "cases": 100,
+            "expected": 100,
+            "succeeded": 100,
+            "failed": 0
+          },
+          "accuracy": 0.77
+        },
+        {
+          "benchmark": "massive-choice-test-v1",
+          "source_url": "https://huggingface.co/datasets/hotchpotch/s1mb-result/resolve/4259f921ae6f6e4b2943b6179eca2380ba1a5922/typesafe__jev_1_13/massive-choice-test-v1.json.xz",
+          "created_at": "2026-09-28T04:09:31+00:00",
+          "model_revision": "jev-1.13.0",
+          "dataset_source": {
+            "repo_id": "hotchpotch/s1mb-dataset",
+            "revision": "0fd11d828a9cc1550c82655f3c622b70ad3882d8"
+          },
+          "counts": {
+            "cases": 100,
+            "expected": 200,
+            "succeeded": 200,
+            "failed": 0
+          },
+          "accuracy": 0.885
+        },
+        {
+          "benchmark": "clinc-choice-test-v1",
+          "source_url": "https://huggingface.co/datasets/hotchpotch/s1mb-result/resolve/4259f921ae6f6e4b2943b6179eca2380ba1a5922/typesafe__jev_1_13/clinc-choice-test-v1.json.xz",
+          "created_at": "2026-09-28T04:06:54+00:00",
+          "model_revision": "jev-1.13.0",
+          "dataset_source": {
+            "repo_id": "hotchpotch/s1mb-dataset",
+            "revision": "0fd11d828a9cc1550c82655f3c622b70ad3882d8"
+          },
+          "counts": {
+            "cases": 151,
+            "expected": 151,
+            "succeeded": 151,
+            "failed": 0
+          },
+          "accuracy": 0.9139072847682119
+        },
+        {
+          "benchmark": "gsm8k-choice-test-v1",
+          "source_url": "https://huggingface.co/datasets/hotchpotch/s1mb-result/resolve/4259f921ae6f6e4b2943b6179eca2380ba1a5922/typesafe__jev_1_13/gsm8k-choice-test-v1.json.xz",
+          "created_at": "2026-09-28T04:08:37+00:00",
+          "model_revision": "jev-1.13.0",
+          "dataset_source": {
+            "repo_id": "hotchpotch/s1mb-dataset",
+            "revision": "0fd11d828a9cc1550c82655f3c622b70ad3882d8"
+          },
+          "counts": {
+            "cases": 100,
+            "expected": 100,
+            "succeeded": 100,
+            "failed": 0
+          },
+          "accuracy": 0.85
+        }
+      ],
+      "run_settings": {
+        "requested_model": "jev-1.13.0",
+        "score_criteria_order": "ascending-value-v1",
+        "renderer": "system-one-structured-v2",
+        "input_length_policy": "full-input-no-local-truncation",
+        "probability_normalization": "sum-normalized-within-2-decimal-rounding"
+      }
+    },
+    {
+      "canonical": "openai__gpt-6-luna-decisions",
+      "id": "gpt-6-luna",
+      "adapter": "openai-decisions",
+      "settings": {},
+      "training_exposure": null,
+      "total_params": null,
+      "active_params": null,
+      "parameter_count_method": null,
+      "display_name": "GPT-6 Luna (Decisions API)",
+      "short_name": "GPT-6 Luna Decisions",
+      "url": "https://developers.openai.com/api/docs/guides/decisions",
+      "hf_url": null,
+      "task_scores": {
+        "noul": 54.54085821490578,
+        "choice": 56.23257426488686,
+        "score": 36.84663806748401
+      },
+      "task_average": 49.20669018242555,
+      "judgments": 26269,
+      "abstained": 17,
+      "selected": [
+        {
+          "benchmark": "banking77-choice-test-v1",
+          "source_url": "https://huggingface.co/datasets/hotchpotch/s1mb-result/resolve/4259f921ae6f6e4b2943b6179eca2380ba1a5922/openai__gpt-6-luna-decisions/banking77-choice-test-v1.json.xz",
+          "created_at": "2026-10-14T06:35:29+00:00",
+          "model_revision": "gpt-6-luna",
+          "dataset_source": {
+            "repo_id": "hotchpotch/S1MB-english-v1",
+            "revision": "6aa5f39753f98eef604a2af6a61f41670c030f28"
+          },
+          "counts": {
+            "cases": 100,
+            "expected": 100,
+            "succeeded": 100,
+            "failed": 0,
+            "abstained": 0
+          },
+          "accuracy": 0.69
+        },
+        {
+          "benchmark": "massive-choice-test-v1",
+          "source_url": "https://huggingface.co/datasets/hotchpotch/s1mb-result/resolve/4259f921ae6f6e4b2943b6179eca2380ba1a5922/openai__gpt-6-luna-decisions/massive-choice-test-v1.json.xz",
+          "created_at": "2026-10-14T06:45:42+00:00",
+          "model_revision": "gpt-6-luna",
+          "dataset_source": {
+            "repo_id": "hotchpotch/S1MB-english-v1",
+            "revision": "6aa5f39753f98eef604a2af6a61f41670c030f28"
+          },
+          "counts": {
+            "cases": 100,
+            "expected": 200,
+            "succeeded": 200,
+            "failed": 0,
+            "abstained": 0
+          },
+          "accuracy": 0.84
+        },
+        {
+          "benchmark": "clinc-choice-test-v1",
+          "source_url": "https://huggingface.co/datasets/hotchpotch/s1mb-result/resolve/4259f921ae6f6e4b2943b6179eca2380ba1a5922/openai__gpt-6-luna-decisions/clinc-choice-test-v1.json.xz",
+          "created_at": "2026-10-14T06:36:48+00:00",
+          "model_revision": "gpt-6-luna",
+          "dataset_source": {
+            "repo_id": "hotchpotch/S1MB-english-v1",
+            "revision": "6aa5f39753f98eef604a2af6a61f41670c030f28"
+          },
+          "counts": {
+            "cases": 151,
+            "expected": 151,
+            "succeeded": 151,
+            "failed": 0,
+            "abstained": 0
+          },
+          "accuracy": 0.8211920529801324
+        },
+        {
+          "benchmark": "gsm8k-choice-test-v1",
+          "source_url": "https://huggingface.co/datasets/hotchpotch/s1mb-result/resolve/4259f921ae6f6e4b2943b6179eca2380ba1a5922/openai__gpt-6-luna-decisions/gsm8k-choice-test-v1.json.xz",
+          "created_at": "2026-10-14T06:44:34+00:00",
+          "model_revision": "gpt-6-luna",
+          "dataset_source": {
+            "repo_id": "hotchpotch/S1MB-english-v1",
+            "revision": "6aa5f39753f98eef604a2af6a61f41670c030f28"
+          },
+          "counts": {
+            "cases": 100,
+            "expected": 100,
+            "succeeded": 100,
+            "failed": 0,
+            "abstained": 0
+          },
+          "accuracy": 0.69
+        }
+      ],
+      "run_settings": {
+        "requested_model": "gpt-6-luna",
+        "endpoint": "https://api.openai.com/v1/decisions",
+        "renderer": "authored-text-anonymous-options-v1",
+        "questions_per_request": 1,
+        "case_batch_size": 4,
+        "input_length_policy": "full-input-no-local-truncation",
+        "score_criteria_order": "declared-order-v1",
+        "probability_normalization": "none",
+        "public_beta": true
+      }
+    },
+    {
+      "canonical": "autotrust__JEV-27B",
+      "id": "autotrust/JEV-27B",
+      "adapter": "jev27",
+      "settings": {},
+      "total_params": 27121688088,
+      "active_params": 25850289688,
+      "parameter_count_method": "embedding_excluded_parameters_v1",
+      "display_name": "JEV-27B",
+      "short_name": "JEV-27B",
+      "url": "https://huggingface.co/autotrust/JEV-27B",
+      "hf_url": "https://huggingface.co/autotrust/JEV-27B",
+      "task_scores": {
+        "noul": 67.64530993678615,
+        "choice": 67.72948464303629,
+        "score": 54.9768439947089
+      },
+      "task_average": 63.45054619151045,
+      "judgments": 26269,
+      "abstained": 0,
+      "selected": [
+        {
+          "benchmark": "banking77-choice-test-v1",
+          "source_url": "https://huggingface.co/datasets/hotchpotch/s1mb-result/resolve/4259f921ae6f6e4b2943b6179eca2380ba1a5922/autotrust__JEV-27B/banking77-choice-test-v1.json.xz",
+          "created_at": "2026-10-10T15:14:32+00:00",
+          "model_revision": "51740a8891c2a8baefd969237fd44187b3e3a115",
+          "dataset_source": {
+            "repo_id": "hotchpotch/s1mb-dataset",
+            "revision": "b8dc678ecefb471c6d37311d8c93f65249622842"
+          },
+          "counts": {
+            "cases": 100,
+            "expected": 100,
+            "succeeded": 100,
+            "failed": 0
+          },
+          "accuracy": 0.73
+        },
+        {
+          "benchmark": "massive-choice-test-v1",
+          "source_url": "https://huggingface.co/datasets/hotchpotch/s1mb-result/resolve/4259f921ae6f6e4b2943b6179eca2380ba1a5922/autotrust__JEV-27B/massive-choice-test-v1.json.xz",
+          "created_at": "2026-10-10T15:46:09+00:00",
+          "model_revision": "51740a8891c2a8baefd969237fd44187b3e3a115",
+          "dataset_source": {
+            "repo_id": "hotchpotch/s1mb-dataset",
+            "revision": "b8dc678ecefb471c6d37311d8c93f65249622842"
+          },
+          "counts": {
+            "cases": 100,
+            "expected": 200,
+            "succeeded": 200,
+            "failed": 0
+          },
+          "accuracy": 0.89
+        },
+        {
+          "benchmark": "clinc-choice-test-v1",
+          "source_url": "https://huggingface.co/datasets/hotchpotch/s1mb-result/resolve/4259f921ae6f6e4b2943b6179eca2380ba1a5922/autotrust__JEV-27B/clinc-choice-test-v1.json.xz",
+          "created_at": "2026-10-10T15:17:15+00:00",
+          "model_revision": "51740a8891c2a8baefd969237fd44187b3e3a115",
+          "dataset_source": {
+            "repo_id": "hotchpotch/s1mb-dataset",
+            "revision": "b8dc678ecefb471c6d37311d8c93f65249622842"
+          },
+          "counts": {
+            "cases": 151,
+            "expected": 151,
+            "succeeded": 151,
+            "failed": 0
+          },
+          "accuracy": 0.8874172185430463
+        },
+        {
+          "benchmark": "gsm8k-choice-test-v1",
+          "source_url": "https://huggingface.co/datasets/hotchpotch/s1mb-result/resolve/4259f921ae6f6e4b2943b6179eca2380ba1a5922/autotrust__JEV-27B/gsm8k-choice-test-v1.json.xz",
+          "created_at": "2026-10-10T15:44:21+00:00",
+          "model_revision": "51740a8891c2a8baefd969237fd44187b3e3a115",
+          "dataset_source": {
+            "repo_id": "hotchpotch/s1mb-dataset",
+            "revision": "b8dc678ecefb471c6d37311d8c93f65249622842"
+          },
+          "counts": {
+            "cases": 100,
+            "expected": 100,
+            "succeeded": 100,
+            "failed": 0
+          },
+          "accuracy": 0.81
+        }
+      ],
+      "run_settings": {
+        "device": "cuda:0",
+        "cuda_visible_devices": "1",
+        "source_python_sha256": "961a9d0d21ef4a83463c4b057ae2edadf9c1cad09db72554db8bf40ee2a1e926",
+        "dtype": "bfloat16",
+        "runtime": "vllm-0.31.0",
+        "temperature": 1.0161280671450397,
+        "max_input_tokens": 32768,
+        "max_candidates": 256,
+        "thinking": false,
+        "choice_strategy": "native-single-pass",
+        "head": "released-converted-lm-head-lora-plus-bias",
+        "input_length_policy": "reject-complete-prompt-plus-answer-overflow",
+        "renderer": "bare-v1-no-bos-authored-order-numeric-score-choice",
+        "candidate_logprobs": "complete-selected-token-readout-no-tail-substitution",
+        "runtime_image": "vllm/vllm-openai@sha256:a4a4c0437bf7240089da5f08aa370c4aee17ae5290f7a3b468825ee26c4c3a6b"
+      }
+    }
+  ],
+  "selected_benchmarks": [
+    {
+      "id": "banking77-choice-test-v1",
+      "task": "choice",
+      "dataset": "datasets/banking77",
+      "split": "test",
+      "case_count": 100,
+      "decision_count": 100,
+      "primary_metric": "target_mass_at_prediction",
+      "identical_recorded_input_hashes_across_three": true
+    },
+    {
+      "id": "massive-choice-test-v1",
+      "task": "choice",
+      "dataset": "datasets/massive",
+      "split": "test",
+      "case_count": 100,
+      "decision_count": 200,
+      "primary_metric": "target_mass_at_prediction",
+      "identical_recorded_input_hashes_across_three": true
+    },
+    {
+      "id": "clinc-choice-test-v1",
+      "task": "choice",
+      "dataset": "datasets/clinc",
+      "split": "test",
+      "case_count": 151,
+      "decision_count": 151,
+      "primary_metric": "target_mass_at_prediction",
+      "identical_recorded_input_hashes_across_three": true
+    },
+    {
+      "id": "gsm8k-choice-test-v1",
+      "task": "choice",
+      "dataset": "datasets/gsm8k",
+      "split": "test",
+      "case_count": 100,
+      "decision_count": 100,
+      "primary_metric": "target_mass_at_prediction",
+      "identical_recorded_input_hashes_across_three": true
+    }
+  ],
+  "limitations": [
+    "Three runs use different dataset repository revisions; input hashes for all four selected benchmark samples are identical across the three models. Full137 benchmark content was not independently compared case-by-case.",
+    "AutoTrust evaluation revision51740a8891c2a8baefd969237fd44187b3e3a115 differs from architecture walkthrough revision14b425269ed24452e0a5ad5a8f3e51d139647a88.",
+    "S1MB includes public and synthetic tasks; training overlap is not ruled out.",
+    "Hosted model snapshots are provider identifiers, not immutable weight pins.",
+    "No matched latency or dollar-cost result is claimed.",
+    "Values are inspected/recomputed published artifacts; no model inference run for this deck."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "status": "awaiting_capture",
+  "reason": "TYPESAFE_API_KEY was unavailable during implementation. No model outputs have been invented.",
+  "request": {
+    "model": "jev-1.13.0",
+    "state": {
+      "example": "Fictional teaching record; no real client data.",
+      "client": "Alex Example",
+      "transaction": "Incoming transfer of CHF 12000",
+      "explanation": "The transfer is my salary savings from employment at Example Studio.",
+      "documents": "A payslip names Alex Example as an employee of Example Studio and shows monthly net pay of CHF 4000. No bank statement tracing accumulated savings is supplied.",
+      "passage": "The sale agreement identifies Morgan Sample as seller and Alex Example as buyer."
+    },
+    "questions": {
+      "source": {
+        "type": "choice",
+        "instructions": "What is the stated source of funds for this transaction? Classify the explanation, not whether it has been verified.",
+        "criteria": {
+          "Employment income": "Pay or savings from employment",
+          "Business proceeds": "Income or proceeds from running a business",
+          "Inheritance": "Funds received through an estate",
+          "Gift": "Funds given without repayment",
+          "Unclear": "The explanation does not identify a single listed source"
+        }
+      },
+      "support": {
+        "type": "score",
+        "instructions": "How strongly do the documents support the transaction’s explanation? Missing evidence is unsupported, not contradicted; contradiction requires conflicting evidence.",
+        "criteria": ["Contradicted", "Unsupported", "Partially supported", "Supported"]
+      },
+      "seller": {
+        "type": "noul",
+        "instructions": "Does this passage explicitly identify the client as seller?"
+      },
+      "specificity": {
+        "type": "score",
+        "instructions": "How specific is the explanation? Evaluate the explanation’s detail separately from documentary support.",
+        "criteria": ["Absent", "Vague", "Specific but incomplete", "Detailed"]
+      }
+    }
+  }
+}
